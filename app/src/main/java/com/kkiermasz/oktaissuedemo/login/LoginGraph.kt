@@ -58,8 +58,7 @@ private fun loginRoute(navigateToDashboard: () -> Unit = {}) {
 
 private fun invokeOktaLogin(context: Context, coroutineScope: CoroutineScope, onResult: (OidcClientResult<Token>) -> Unit) {
     val webAuthenticationClient = CredentialBootstrap.oidcClient.createWebAuthenticationClient()
-    var scope = AppHelper.DEFAULT_SCOPE
-    scope += " device_sso"
+    val scope = AppHelper.DEFAULT_SCOPE
 
     coroutineScope.launch {
         val result = webAuthenticationClient.login(
