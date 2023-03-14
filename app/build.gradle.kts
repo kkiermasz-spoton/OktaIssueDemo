@@ -29,7 +29,7 @@ android {
         buildConfigField("String", "SIGN_IN_REDIRECT_URI", oktaProperties.getProperty("signInRedirectUri"))
         buildConfigField("String", "SIGN_OUT_REDIRECT_URI", oktaProperties.getProperty("signOutRedirectUri"))
 
-        manifestPlaceholders["webAuthenticationRedirectScheme"] = oktaProperties.getProperty("redirectUriScheme")
+        manifestPlaceholders["webAuthenticationRedirectScheme"] = oktaProperties.getProperty("signInRedirectUri")
     }
     buildFeatures {
         compose = true
